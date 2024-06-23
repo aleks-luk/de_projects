@@ -6,6 +6,7 @@ logging.basicConfig(filename='api.log', level=logging.INFO,
                     format='%(asctime)s:%(levelname)s:%(message)s')
 load_path = 'raw_data/'
 
+
 class UserAPI:
     def __init__(self, n_users=10, v_nationalities=['us']):
         self.users_url = 'https://randomuser.me/api/'
