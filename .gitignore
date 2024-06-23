@@ -1,1 +1,2 @@
+# Remove idea directory because it is internal to PyCharm
 .idea/
