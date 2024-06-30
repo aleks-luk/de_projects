@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 import logging
 
+
 # Configure logging
 logging.basicConfig(filename='api.log', level=logging.INFO,
                     format='%(asctime)s:%(levelname)s:%(message)s')
