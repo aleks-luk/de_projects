@@ -74,7 +74,7 @@ class BookScraper:
                         table[name.get_text(strip=True)] = attribute.get_text(strip=True)
 
             self.results.append(table)
-            logging.info(f"Added book data: {table}")
+            logging.info(f"Added book _data: {table}")
         except requests.RequestException as e:
             logging.error(f"Error scraping book details: {e}")
 
@@ -83,9 +83,9 @@ class BookScraper:
 
     def save_to_csv(self, filename):
         df = self.get_data_frame()
-        logging.info(f"Saving data to CSV file: {filename}")
+        logging.info(f"Saving _data to CSV file: {filename}")
         df.to_csv(filename, sep=';', index=False, header=True)
-        logging.info("Data saved successfully")
+        logging.info("_data saved successfully")
 
 # Example usage
 base_url = 'https://libra.ibuk.pl/ksiazki'

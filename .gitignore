@@ -5,3 +5,5 @@
 .DS_Store/
 books/.DS_Store
 **/.DS_Store/
+#Ignore data directory
+_data/
