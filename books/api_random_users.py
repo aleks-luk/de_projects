@@ -13,15 +13,15 @@ class UserAPI:
         self.params = {'nat': v_nationalities, 'seed': 'foobar', 'results': n_users, 'format': 'json'}
 
     def fetch_users_from_api(self):
-        logging.info(f'Fetching users data from API: {self.users_url}')
+        logging.info(f'Fetching users _data from API: {self.users_url}')
         try:
             r = requests.get(self.users_url, params=self.params)
             if r.status_code == 200:
                 users_json_data = r.json()
-                logging.info('Successfully fetched users data from API')
+                logging.info('Successfully fetched users _data from API')
                 return users_json_data
         except requests.exceptions.RequestException as e:
-            logging.error(f'Failed to fetch users data from API: {e}')
+            logging.error(f'Failed to fetch users _data from API: {e}')
             return None
 
     def save_to_file(self, data, filename):
@@ -29,9 +29,9 @@ class UserAPI:
             file_path = f'./{filename}'
             with open(file_path, 'w') as f:
                 json.dump(data, f)
-            logging.info(f'Saved data to {file_path}')
+            logging.info(f'Saved _data to {file_path}')
         else:
-            logging.warning(f'No data to save for {filename}')
+            logging.warning(f'No _data to save for {filename}')
 
 if __name__ == '__main__':
     user_api = UserAPI()

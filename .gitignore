@@ -1,1 +1,9 @@
+# Remove idea directory because it is internal to PyCharm
 .idea/
+#Remove DS_store file from the project
+.DS_Store
+.DS_Store/
+books/.DS_Store
+**/.DS_Store/
+#Ignore data directory
+_data/
