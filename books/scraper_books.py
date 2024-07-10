@@ -88,6 +88,7 @@ class BookScraper:
         df.to_csv(filename, sep=';', index=False, header=True)
         logging.info("_data saved successfully")
 
+
 # Example usage
 base_url = 'https://libra.ibuk.pl/ksiazki'
 landing_page = 'https://libra.ibuk.pl'

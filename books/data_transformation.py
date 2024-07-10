@@ -4,7 +4,6 @@ import os
 
 
 os.environ['LOAD_PATH'] = 'files_to_load/'
-os.environ['RAW_DATA_PATH'] = './raw_data/'
 
 load_path = os.environ['LOAD_PATH']
 raw_data_path = os.environ['RAW_DATA_PATH']
