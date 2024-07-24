@@ -1,0 +1,1 @@
+python books/scraper_books.py -t './_data/books/raw';

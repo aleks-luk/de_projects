@@ -8,3 +8,5 @@ books/.DS_Store
 #Ignore data directory
 _data/
 local/
+*.log
+
