@@ -6,6 +6,7 @@ from argparse import ArgumentParser
 from datetime import datetime
 import os
 
+
 # Configure logging
 logging.basicConfig(filename='api.log', level=logging.INFO,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -85,7 +86,6 @@ class BookScraper:
         df.to_csv(file_name, sep=';', index=False, header=True)
         logging.info("_data saved successfully")
 
-
 if __name__ == '__main__':
     # python books/scraper_books.py -t './_data/books/raw' -l 2
     parser = ArgumentParser(prog='Books Scraper')
@@ -96,3 +96,4 @@ if __name__ == '__main__':
     scraper.scrape(max_pages=args.limit_pages)
     scraper.save_to_csv(target_path=args.target_path)
     print(scraper.get_data_frame().to_markdown())
+
