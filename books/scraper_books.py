@@ -80,11 +80,12 @@ class BookScraper:
         return pd.DataFrame(self.results)
 
     def save_to_csv(self, target_path):
-        file_name = os.path.join(target_path, self.file_name)
+        file_name = os.path.join(target_path, 'scraped_books_file.csv')
         df = self.get_data_frame()
         logging.info(f"Saving _data to CSV file: {file_name}")
         df.to_csv(file_name, sep=';', index=False, header=True)
         logging.info("_data saved successfully")
+
 
 if __name__ == '__main__':
     # python books/scraper_books.py -t './_data/books/raw' -l 2
