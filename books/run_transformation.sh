@@ -1,0 +1,1 @@
+python books/data_transformation.py -t './_data/books/transformed' -s './_data/books/raw'

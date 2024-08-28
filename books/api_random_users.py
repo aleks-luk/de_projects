@@ -1,6 +1,8 @@
 import requests
 import logging
 import json
+import os
+from argparse import ArgumentParser
 
 logging.basicConfig(filename='api.log', level=logging.INFO,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -24,16 +26,20 @@ class UserAPI:
             logging.error(f'Failed to fetch users _data from API: {e}')
             return None
 
-    def save_to_file(self, data, filename):
+    def save_to_file(self, data, target_path):
         if data is not None:
-            file_path = f'./{filename}'
-            with open(file_path, 'w') as f:
+            file_name = os.path.join(target_path, 'api_random_users.json')
+            with open(file_name, 'w') as f:
                 json.dump(data, f)
-            logging.info(f'Saved _data to {file_path}')
+            logging.info(f'Saved _data to {file_name}')
         else:
-            logging.warning(f'No _data to save for {filename}')
+            logging.warning(f'No _data to save for {target_path}')
+
 
 if __name__ == '__main__':
+    parser = ArgumentParser(prog='Get api random users data')
+    parser.add_argument('-t', '--target_path')
+    args = parser.parse_args()
     user_api = UserAPI()
     users = user_api.fetch_users_from_api()
-    user_api.save_to_file(users, load_path +'users_api_data.json')
+    user_api.save_to_file(users, target_path=args.target_path)
