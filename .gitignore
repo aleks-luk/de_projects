@@ -9,4 +9,5 @@ books/.DS_Store
 _data/
 local/
 *.log
-
+#Remove json files from the project
+otodom_property_details.json
