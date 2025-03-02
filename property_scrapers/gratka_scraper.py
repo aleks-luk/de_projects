@@ -66,6 +66,7 @@ def scrape_details(link, property_type):
     ##TODO write the rest of this scraper
 
 
+
 if __name__ == '__main__':
     for key, value in PROPERTY_TYPES.items():
         base_url = f"https://gratka.pl/nieruchomosci/{key}"
