@@ -45,8 +45,8 @@ def scrape_details(link, property_type):
     offer_details_soup = property_soup.find_all('p', class_='e2md81j2 css-htq2ld')
     offer_upd_date, offer_ins_date, offer_id = [detail.get_text(strip=True).split(":")[1].strip() for detail in offer_details_soup]
     property_price_soup = property_soup.find('strong', class_='css-1o51x5a e1k1vyr21').get_text(strip=True)
-    property_descripton_soup = property_soup.find('div', attrs={'data-cy': 'adPageAdDescription'}).get_text(strip=True)
-    property_adress_soup = property_soup.find('a', class_='css-1jjm9oe e42rcgs1').get_text(strip=True)
+    property_description_soup = property_soup.find('div', attrs={'data-cy': 'adPageAdDescription'}).get_text(strip=True)
+    property_address_soup = property_soup.find('a', class_='css-1jjm9oe e42rcgs1').get_text(strip=True)
     property_general_info_soup = property_soup.find_all('button', class_='eezlw8k1 css-7kiatb')
     property_details_soup = property_soup.find_all('div', class_='css-t7cajz e15n0fyo1')
 
@@ -56,10 +56,10 @@ def scrape_details(link, property_type):
         'property_type': property_type,
         'link': link,
         'price': property_price_soup,
-        'address': property_adress_soup,
+        'address': property_address_soup,
         'general_info': general_info,
         'details': [detail.get_text(separator=' ', strip=True) for detail in property_details_soup],
-        'description': property_descripton_soup,
+        'description': property_description_soup,
         'offer_insert_date': offer_ins_date,
         'offer_update_date': offer_upd_date,
         'offer_id': offer_id,
