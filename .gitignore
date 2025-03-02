@@ -11,3 +11,19 @@ local/
 *.log
 #Remove json files from the project
 otodom_property_details.json
+#Remove output data
+/simple_etl/data
+#Remove ruff.toml, python-version, uv-lock, config files
+.python-version
+uv.lock
+ruff.toml
+config.json
+#Remove venv dir
+.venv
+.idea
+#SQLite db
+*.db
+#Test files
+property_scrapers/test1.py
+property_scrapers/test2.py
+simple_etl/__pycache__/
