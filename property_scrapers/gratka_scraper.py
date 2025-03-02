@@ -63,28 +63,7 @@ def scrape_details(link, property_type):
     property_details_soup = property_soup.find_all('div', class_='iT04N1')
     details = [detail.get_text(separator=' ', strip=True) for detail in property_details_soup]
 
-    # print(property_price_soup)
-    # print(basic_details)
-    # print(details)
-    # print(advantages_info)
-    print(property_description_soup)
-
-
-    # scraped_data = {
-    #     'property_type': property_type,
-    #     'link': link,
-    #     'price': property_price_soup,
-    #     'address': property_adress_soup,
-    #     'general_info': general_info,
-    #     'details': [detail.get_text(separator=' ', strip=True) for detail in property_details_soup],
-    #     'description': property_descripton_soup,
-    #     'offer_insert_date': offer_ins_date,
-    #     'offer_update_date': offer_upd_date,
-    #     'offer_id': offer_id,
-    #     'source': 'otodom.pl'
-    # }
-    # PROPERTY_DETAILS[f"item_{COUNTER}"] = scraped_data
-    # COUNTER += 1
+    ##TODO write the rest of this scraper
 
 
 if __name__ == '__main__':
